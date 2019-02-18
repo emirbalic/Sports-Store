@@ -27,6 +27,11 @@ import { StoreFirstGuard } from './storeFirst.guard';
         component: CheckoutComponent,
         canActivate: [StoreFirstGuard]
       },
+      {
+        path: 'admin',
+        loadChildren: './admin/admin.module#AdminModule',
+        canActivate: [StoreFirstGuard]
+      },
       { path: '**', redirectTo: '/store' }
     ])
   ],
